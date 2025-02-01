@@ -14,6 +14,19 @@ export const Navigation = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    const element = document.querySelector(href);
+    if (element) {
+      const offsetTop = element.getBoundingClientRect().top + window.pageYOffset;
+      window.scrollTo({
+        top: offsetTop,
+        behavior: "smooth"
+      });
+      setIsMobileMenuOpen(false);
+    }
+  };
+
   const navItems = [
     { title: "Главная", href: "#hero" },
     { title: "Категории", href: "#categories" },
@@ -46,9 +59,10 @@ export const Navigation = () => {
               <motion.a
                 key={item.title}
                 href={item.href}
+                onClick={(e) => handleClick(e, item.href)}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="text-gray-700 hover:text-primary transition-colors"
+                className="text-gray-700 hover:text-primary transition-colors cursor-pointer"
               >
                 {item.title}
               </motion.a>
@@ -79,7 +93,7 @@ export const Navigation = () => {
                 <a
                   key={item.title}
                   href={item.href}
-                  onClick={() => setIsMobileMenuOpen(false)}
+                  onClick={(e) => handleClick(e, item.href)}
                   className="text-gray-700 hover:text-primary transition-colors"
                 >
                   {item.title}

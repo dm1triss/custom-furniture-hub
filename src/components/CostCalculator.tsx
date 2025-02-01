@@ -54,7 +54,7 @@ export const CostCalculator = () => {
   };
 
   return (
-    <section className="py-20 px-4 bg-gray-50">
+    <section id="calculator" className="py-20 px-4 bg-gray-50">
       <div className="max-w-3xl mx-auto">
         <h2 className="text-4xl font-bold text-center mb-12">Рассчитать стоимость</h2>
         <form onSubmit={handleSubmit} className="space-y-8">

@@ -23,7 +23,7 @@ export const ContactForm = () => {
   };
 
   return (
-    <section className="py-20 px-4">
+    <section id="contact" className="py-20 px-4">
       <div className="max-w-3xl mx-auto">
         <h2 className="text-4xl font-bold text-center mb-12">Оставить заявку</h2>
         <form onSubmit={handleSubmit} className="space-y-6">
