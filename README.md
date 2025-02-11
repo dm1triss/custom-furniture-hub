@@ -1,4 +1,4 @@
-https://custom-furniture-hub.lovable.app/
+## Visit a website https://custom-furniture-hub.lovable.app/
 # Welcome to your Lovable project
 
 ## Project info
